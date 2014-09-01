@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#607d8b</color>
+    <color name="primary_dark">#455a64</color>
+    <color name="accent">#a7ffeb</color>
+
+    <color name="text_apptheme">@color/text_gray</color>
+    <color name="text_gray">#656565</color>
+
+    <color name="selector_background">@android:color/transparent</color>
+    <color name="selector_background_pressed">#15000000</color>
+    <color name="selector_background_focused">#10000000</color>
+
+    <color name="window_background">@android:color/white</color>
+</resources>
