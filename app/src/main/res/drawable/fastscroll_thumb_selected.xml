@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Spacing -->
+    <item>
+        <shape>
+            <padding
+                android:bottom="8dp"
+                android:left="8dp"
+                android:right="8dp"
+                android:top="8dp" />
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+
+    <!-- Actual Thumb Drawable -->
+    <item>
+        <shape>
+
+            <solid android:color="@color/primary" />
+            <corners android:radius="16dp" />
+            <size
+                android:width="4dp"
+                android:height="36dp" />
+        </shape>
+    </item>
+
+</layer-list>

@@ -1,0 +1,8 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/ActionBarStyle</item>
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb</item>
+    </style>
+</resources>
