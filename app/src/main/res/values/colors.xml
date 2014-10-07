@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#607d8b</color>
-    <color name="primary_dark">#455a64</color>
-    <color name="accent">#a7ffeb</color>
+    <color name="primary">#57b44b</color>
+    <color name="primary_dark">#49933e</color>
+    <color name="accent">#f7fff0</color>
     <color name="neutral">#888888</color>
 
     <color name="text_apptheme">@color/text_gray</color>
@@ -13,4 +13,5 @@
     <color name="selector_background_focused">#10000000</color>
 
     <color name="window_background">@android:color/white</color>
+
 </resources>

@@ -1,13 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-//    compileSdkVersion 'android-L'
-    compileSdkVersion 19
+    // In order to be able to use 21 you need to have the following modified platform directory
+    // in your SDK/platforms directory
+    // https://docs.google.com/file/d/0B3kP5OEGFYUBZWxacV9jVjVKOGs
+    compileSdkVersion 21
     buildToolsVersion '20.0.0'
     defaultConfig {
         applicationId 'tr.xip.horriblesubsschedule'
-        minSdkVersion 8
-        targetSdkVersion 'L'
+        minSdkVersion 14
+        targetSdkVersion 21
         versionCode 1
         versionName '1.0'
     }
@@ -23,7 +25,8 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:19.+'
-    compile 'com.tonicartos:stickygridheaders:1.0.1'
+    compile 'com.android.support:support-v4:+'
+    compile 'com.android.support:appcompat-v7:+'
+    compile 'com.tonicartos:stickygridheaders:+'
     compile 'org.jsoup:jsoup:+'
 }

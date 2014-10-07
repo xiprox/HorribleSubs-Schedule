@@ -2,37 +2,34 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="250dp"
-    android:layout_height="wrap_content"
-    android:background="@android:color/white">
+    android:layout_height="72dp"
+    android:background="@android:color/white"
+    android:minHeight="72dp"
+    android:minWidth="250dp">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:background="@drawable/selector_background"
-        android:minHeight="72dp">
+    <TextView
+        android:id="@+id/item_schedule_anime_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="64dp"
+        android:ellipsize="marquee"
+        android:maxLines="1"
+        android:text="Cool Name"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textColor="@color/text_gray" />
 
-        <TextView
-            android:id="@+id/item_schedule_anime_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="72dp"
-            android:ellipsize="marquee"
-            android:maxLines="1"
-            android:text="Awesome Anime"
-            android:textAppearance="@android:style/TextAppearance.Medium"
-            android:textColor="@color/text_gray" />
+    <TextView
+        android:id="@+id/item_schedule_anime_release_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="16dp"
+        android:maxLines="1"
+        android:text="00:00"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textColor="@color/text_gray" />
 
-        <TextView
-            android:id="@+id/item_schedule_anime_release_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="16dp"
-            android:text="00:00"
-            android:textAppearance="@android:style/TextAppearance.Medium"
-            android:textColor="@color/text_gray" />
-    </RelativeLayout>
 </RelativeLayout>
