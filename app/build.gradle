@@ -1,24 +1,28 @@
 apply plugin: 'com.android.application'
 
 android {
+
     // In order to be able to use 21 you need to have the following modified platform directory
     // in your SDK/platforms directory
     // https://docs.google.com/file/d/0B3kP5OEGFYUBZWxacV9jVjVKOGs
     compileSdkVersion 21
     buildToolsVersion '20.0.0'
+
     defaultConfig {
         applicationId 'tr.xip.horriblesubsschedule'
         minSdkVersion 14
         targetSdkVersion 21
         versionCode 1
-        versionName '1.0'
+        versionName '1.0.0'
     }
+
     buildTypes {
         release {
             runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
     productFlavors {
     }
 }
