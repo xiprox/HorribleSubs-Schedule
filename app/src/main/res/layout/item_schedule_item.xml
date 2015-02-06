@@ -2,9 +2,9 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="250dp"
-    android:layout_height="72dp"
+    android:layout_height="64dp"
     android:background="@android:color/white"
-    android:minHeight="72dp"
+    android:minHeight="64dp"
     android:minWidth="250dp">
 
     <TextView
@@ -17,8 +17,8 @@
         android:ellipsize="marquee"
         android:maxLines="1"
         android:text="Cool Name"
-        android:textAppearance="@android:style/TextAppearance.Medium"
-        android:textColor="@color/text_gray" />
+        android:textColor="@color/text_gray"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/item_schedule_anime_release_time"
@@ -29,7 +29,7 @@
         android:layout_marginRight="16dp"
         android:maxLines="1"
         android:text="00:00"
-        android:textAppearance="@android:style/TextAppearance.Medium"
-        android:textColor="@color/text_gray" />
+        android:textColor="@color/text_gray"
+        android:textSize="16sp" />
 
 </RelativeLayout>
