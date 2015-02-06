@@ -1,11 +1,9 @@
 package tr.xip.horriblesubsschedule;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.tonicartos.widget.stickygridheaders.StickyGridHeadersSimpleArrayAdapter;
@@ -13,30 +11,27 @@ import com.tonicartos.widget.stickygridheaders.StickyGridHeadersSimpleArrayAdapt
 import java.util.List;
 
 import tr.xip.horriblesubsschedule.database.DatabaseManager;
-import tr.xip.horriblesubsschedule.database.items.AnimeItem;
+import tr.xip.horriblesubsschedule.models.Anime;
 
 /**
  * Created by Hikari on 8/29/14.
  */
-public class ScheduleItemsAdapter extends StickyGridHeadersSimpleArrayAdapter<AnimeItem> {
-
-    DatabaseManager dbMan;
+public class ScheduleItemsAdapter extends StickyGridHeadersSimpleArrayAdapter<Anime> {
 
     View rootView;
     Context context;
-    List<AnimeItem> mList;
+    List<Anime> mList;
     int mHeaderResId;
     int mItemResId;
 
     String[] mDaysList;
 
-    public ScheduleItemsAdapter(Context context, List<AnimeItem> items, int headerResId, int itemResId) {
+    public ScheduleItemsAdapter(Context context, List<Anime> items, int headerResId, int itemResId) {
         super(context, items, headerResId, itemResId);
         this.context = context;
         mList = items;
         mHeaderResId = headerResId;
         mItemResId = itemResId;
-        dbMan = new DatabaseManager(context);
 
         mDaysList = context.getResources().getStringArray(R.array.schedule_days_list);
     }
@@ -50,7 +45,7 @@ public class ScheduleItemsAdapter extends StickyGridHeadersSimpleArrayAdapter<An
             rootView = inflater.inflate(R.layout.item_schedule_item, null);
         }
 
-        final AnimeItem item = mList.get(position);
+        final Anime item = mList.get(position);
 
         TextView mAnimeName = (TextView) rootView.findViewById(R.id.item_schedule_anime_name);
         TextView mAnimeReleaseTime = (TextView) rootView.findViewById(R.id.item_schedule_anime_release_time);
@@ -60,7 +55,6 @@ public class ScheduleItemsAdapter extends StickyGridHeadersSimpleArrayAdapter<An
 
         return rootView;
     }
-
 
     @Override
     public long getHeaderId(int position) {
@@ -73,7 +67,7 @@ public class ScheduleItemsAdapter extends StickyGridHeadersSimpleArrayAdapter<An
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.item_header, null);
         }
-        AnimeItem item = mList.get(position);
+        Anime item = mList.get(position);
 
         TextView mHeaderTitle = (TextView) convertView.findViewById(R.id.item_header_title);
 

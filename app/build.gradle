@@ -1,10 +1,6 @@
 apply plugin: 'com.android.application'
 
 android {
-
-    // In order to be able to use 21 you need to have the following modified platform directory
-    // in your SDK/platforms directory
-    // https://docs.google.com/file/d/0B3kP5OEGFYUBZWxacV9jVjVKOGs
     compileSdkVersion 21
     buildToolsVersion '20.0.0'
 
@@ -32,5 +28,6 @@ dependencies {
     compile 'com.android.support:support-v4:+'
     compile 'com.android.support:appcompat-v7:+'
     compile 'com.tonicartos:stickygridheaders:+'
+    compile 'com.github.satyan:sugar:+'
     compile 'org.jsoup:jsoup:+'
 }

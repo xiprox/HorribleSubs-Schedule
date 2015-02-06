@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tr.xip.horriblesubsschedule.database.DatabaseManager;
-import tr.xip.horriblesubsschedule.database.items.AnimeItem;
+import tr.xip.horriblesubsschedule.models.Anime;
 
 /**
  * Created by Hikari on 8/29/14.
@@ -43,15 +43,13 @@ public class ScheduleFragment extends Fragment {
 
     private final String TAG = "Schedule Fragment";
 
-    DatabaseManager dbMan;
-
     Context context;
 
     View rootView;
     StickyGridHeadersGridView mScheduleGrid;
     ViewFlipper mViewFlipper;
 
-    List<AnimeItem> mList = new ArrayList<AnimeItem>();
+    List<Anime> mList = new ArrayList<Anime>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,7 +60,6 @@ public class ScheduleFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_schedule, null);
         context = getActivity();
-        dbMan = new DatabaseManager(context);
 
         mScheduleGrid = (StickyGridHeadersGridView) rootView.findViewById(R.id.schedule_grid);
         mViewFlipper = (ViewFlipper) rootView.findViewById(R.id.schedule_view_flipper);
@@ -92,26 +89,19 @@ public class ScheduleFragment extends Fragment {
         protected void onPostExecute(Boolean success) {
             super.onPostExecute(success);
 
-            if (success) {
-                /**
-                 * Save the list to the database for offline usage
-                 */
-                dbMan.saveScheduleList(mList);
-            } else {
-                /**
-                 * Offline mode: Load the list from database
-                 */
-                mList = dbMan.getScheduleList();
-            }
+            if (success)
+                /* Save the list to the database for offline usage */
+                DatabaseManager.saveScheduleList(mList);
+            else
+                /* Offline mode: Load the list from database */
+                mList = DatabaseManager.getScheduleList();
 
-            /**
-             * Check if the list is empty. In case of an empty list, display an error message.
-             */
-            if (mList.size() != 0) {
+            /* Check if the list is empty. In case of an empty list, display an error message */
+            if (mList.size() != 0)
                 mScheduleGrid.setAdapter(new ScheduleItemsAdapter(
                         context, mList, R.layout.item_header, R.layout.item_schedule_item));
 
-            } else {
+            else {
                 Toast.makeText(context, R.string.error_cant_load, Toast.LENGTH_LONG).show();
 
                 Activity activity = getActivity();
@@ -196,7 +186,7 @@ public class ScheduleFragment extends Fragment {
             String name = nameWithTime.substring(0, nameWithTime.length() - 5);
             String time = element.select("span.release-time").text();
 
-            AnimeItem item = new AnimeItem(name, time, day);
+            Anime item = new Anime(name, time, day);
 
             mList.add(item);
         }
